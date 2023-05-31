@@ -1,0 +1,3 @@
+This folder can be used to replicate the results for the _Voice, Arrhythmia and Parkinson_ datasets in the [**UCI ML Repository**](https://archive.ics.uci.edu/ml/datasets.php). The datasets went trough some prepocessing in order to guarantee good sampling for _Stan_. The already preprocessed datasets can be found in the subdirectory [Preprocessed_data](https://github.com/luchinoprince/MixtureIS/tree/main/R_codes/Logistic_Model_R/Preprocessed_data). 
+
+To replicate the results one just have to run the code [Lppd.R](https://github.com/luchinoprince/MixtureIS/blob/main/R_codes/Logistic_Model_R/Lppd.R), selecting the desidered dataset from the available ones at the top of the code. 
