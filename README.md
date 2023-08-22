@@ -29,8 +29,8 @@ Not all the figures of the manuscript are directly reproducible from this folder
 ### Python/Julia
 - The plot at the end of [**Gaussian_Simulated.ipynb**](https://anonymous.4open.science/r/Mixture_IS-A64E/Python_codes/Gaussian_simulated.ipynb) is just to show the different levels of accuracies of the estimators for the different addends of LOOCV for a single simulated dataset. It has not hence any counterpart in the manuscript. 
 
-- Setting the _attempts=10000_ at line _15_ of the third cell block of [**Gaussian_Simulated_np.ipynb**](https://anonymous.4open.science/r/Mixture_IS-A64E/Python_codes/Gaussian_simulated_np.ipynb) and the plotting the results using the penultimate cell block of the same will produce the right subfigure of _Figure 2_ at page _21_ of the manuscript. As mentioned above though, such an experiment is extremely time consuming in Python, hence if one wishes to reproduce it the recommended workflow is the following:
-    - Run the Julia code [**hyper_highD.jl**](https://anonymous.4open.science/r/Mixture_IS-A64E/Julia_codes/hyper_highD.jl) with as many threads as physical cores of your working machine; to do sum run the following command
+- Setting _attempts=10000_ at line _15_ of the third cell block of [**Gaussian_Simulated_np.ipynb**](https://anonymous.4open.science/r/Mixture_IS-A64E/Python_codes/Gaussian_simulated_np.ipynb) and the plotting the results using the penultimate cell block of the same will produce the right subfigure of _Figure 2_ at page _21_ of the manuscript. As mentioned above though, such an experiment is extremely time consuming in Python, hence if one wishes to reproduce it the recommended workflow is the following:
+    - Run the Julia code [**hyper_highD.jl**](https://anonymous.4open.science/r/Mixture_IS-A64E/Julia_codes/hyper_highD.jl) with as many threads as physical cores of your working machine; to do so run the following command
         ```
         julia --threads nthreads hyper_highD.jl
         ``` 
@@ -40,7 +40,7 @@ Not all the figures of the manuscript are directly reproducible from this folder
         ```
         sigma_0 = np.identity(d+1)
         ```
-        Nonetheless this has the same slow speed as before. In Julia you have to change line _176_ of [**hyper_highD.jl**](https://anonymous.4open.science/r/Mixture_IS-A64E/Julia_codes/hyper_highD.jl) to 
+        Nonetheless this has the same computational time issue as before. In Julia you have to change line _176_ of [**hyper_highD.jl**](https://anonymous.4open.science/r/Mixture_IS-A64E/Julia_codes/hyper_highD.jl) to 
         ```
         sigma = Diagonal(1*ones(d+1))
         ```
@@ -48,7 +48,7 @@ Not all the figures of the manuscript are directly reproducible from this folder
 - Running the cells of [Stack_Loss.ipynb](https://anonymous.4open.science/r/Mixture_IS-A64E/Python_codes/Stack_Loss.ipynb) directly replicates _Figure S.5_ of the supplement. 
 
 ### R
-The plot of [**Lppd.R**](https://anonymous.4open.science/r/Mixture_IS-A64E/R_codes/Logistic_Model_R/Lppd.R) just gives an element whise comparison between the classical and mixture estimators and is not present in the paper, as in the paper we have no plots coming from **R**. It is meant to allow **R** users to get some quick results. The default dataset used is the [**Voice**](https://archive.ics.uci.edu/ml/datasets/LSVT+Voice+Rehabilitation) dataset analysed in Section _4.2_ of the manuscript. To analyse the other datasets present in that section change line _16_ of [**Lppd.R**](https://anonymous.4open.science/r/Mixture_IS-A64E/R_codes/Logistic_Model_R/Lppd.R) to the desired dataset. For example if one wished to get the estimators for the [**Parkinson**](https://archive.ics.uci.edu/ml/datasets/LSVT+Voice+Rehabilitation) dataset, change line _16_ to 
+The plot of [**Lppd.R**](https://anonymous.4open.science/r/Mixture_IS-A64E/R_codes/Logistic_Model_R/Lppd.R) just gives an element-wise comparison between the classical and mixture estimators and is not present in the paper, as in the paper we have no plots coming from **R**. It is meant to allow **R** users to get some quick results. The default dataset used is the [**Voice**](https://archive.ics.uci.edu/ml/datasets/LSVT+Voice+Rehabilitation) dataset analysed in Section _4.2_ of the manuscript. To analyse the other datasets present in that section change line _16_ of [**Lppd.R**](https://anonymous.4open.science/r/Mixture_IS-A64E/R_codes/Logistic_Model_R/Lppd.R) to the desired dataset. For example if one wished to get the estimators for the [**Parkinson**](https://archive.ics.uci.edu/ml/datasets/LSVT+Voice+Rehabilitation) dataset, change line _16_ to 
 ```
 data = read.csv("./../../Data/Parkinson_preprocessed.csv")
 ```
